@@ -6,7 +6,7 @@ use Bio::Seq;
 use Bio::SeqIO;
 use Bio::DB::Fasta;
 
-## Use this script to obtain three fasta sequences from a gff file and it's corresponding fasta.
+## Use this script to obtain three fasta sequences (cds, peptide and gene) from a gff file and it's corresponding fasta.
 ## This script uses bioperl.
 
 my $cdsoutput = Bio::SeqIO->new(-format => 'fasta', -file => ">$ARGV[2].cds.fasta");
