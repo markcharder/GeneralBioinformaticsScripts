@@ -42,6 +42,7 @@ while (my $line = <>){
 
         $detectstops = 0;
         $header = $line;
+        $header =~ s/>//g;
         @seqarray = "";}
 
     if ($line !~ />/){
