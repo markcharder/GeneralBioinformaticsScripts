@@ -3,7 +3,7 @@
 use strict;
 use warnings;
 
-## This script will apply a consistent naming scheme to genes in a gff file. 
+## This script will apply a consistent naming scheme to genes in a gff3 file. 
 ## Each gene will be given a user-specified prefix and numbered in multiples of 10 
 ## (to allow for inclusion of extra tracks if necessary).
 ## This script assumes that chromosomes or scaffolds are named as "prefix_n" 
