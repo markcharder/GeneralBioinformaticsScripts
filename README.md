@@ -8,4 +8,3 @@ This repository includes the following kinds of scripts:
 Most of the reformatting scripts are semi-portable, i.e. they may require some pre-emptive formatting by the user.
 They should take care of the tricky bits that would be impractical to attempt to do manually.
 Note: checkStops.pl is for use on a peptide sequence file that should include stops, otherwise it will report missing stops for all sequences within the file.
-Please don't hesitate to get in touch if help is needed using these scripts.
