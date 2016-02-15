@@ -3,7 +3,9 @@
 use strict;
 use warnings;
 
-## This script will sort a gff3 file, taking into account the lines beginning with "#". Each scaffold must be named as "prefix_n" where "prefix" is the name of the scaffold and "n" is the scaffold number.
+## This script will sort a gff3 file, taking into account the lines beginning with "#". 
+## Each scaffold must be named as "prefix_n" where "prefix" is the name of the scaffold 
+## and "n" is the scaffold number.
 
 my $firsthead = 0;
 my %chrids;
