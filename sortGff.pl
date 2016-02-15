@@ -6,8 +6,8 @@ use warnings;
 ## This script will sort a gff3 file based on scaffold number (ascending),
 ## taking into account the lines beginning with "#" (these should follow gff3 format specifications). 
 ## Each scaffold must be named as "prefix_n" where "prefix" is the name of the scaffold 
-## and "n" is the scaffold number. In this case as scaffolds were complete chromosomes,
-## they were numbered from largest to smallest as "Chr_1..n.
+## and "n" is the scaffold number. In this case in its original usage this script dealt with scaffolds that
+## were complete chromosomes; these were numbered from largest to smallest as "Chr_1..n".
 
 my $firsthead = 0;
 my %chrids;
