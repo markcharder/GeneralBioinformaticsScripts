@@ -5,7 +5,7 @@ use warnings;
 
 ## This script will apply a consistent naming scheme to genes in a gff file. Each gene will be given a user-specified prefix and numbered in multiples of 10 (to allow for inclusion of extra tracks if necessary).
 ## This script assumes that chromosomes or scaffolds are named as "prefix_n" where n is the number of the chromosome or scaffold (the first field of the gff). The script will not work if this field is named otherwise.
-## For example, this script was originally written to modify a gff file that contained chromosome info in the first column that read like this "Chr_1, Chr_2, Chr_3... Chr_n".
+## For example, this script was originally written to modify a gff file that contained chromosome info in the first column that read like this "Chr_1, Chr_2, Chr_3.. Chr_n".
 ## This script also assumes that the gff file is formatted such that each gene track comes before its own exon and cds tracks, so that its exons and cdss can be counted starting at the gene track (setting the count to 0 at this point).
 
 my $usage = "$0 <prefix> <gff file>\n";
