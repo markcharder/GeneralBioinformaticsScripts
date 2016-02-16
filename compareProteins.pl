@@ -3,6 +3,14 @@
 use strict;
 use warnings;
 
+## This script will generate some summary statistics on protein sequences from two different genome assemblies based on the output from
+## a blast analysis.
+## The script assumes the "blast hits table" input has been output from a blastp analysis in the 
+## following format (according to blast specification):
+## '-outfmt "6 qseqid qlen sseqid slen length evalue pident" -max_target_seqs 1 -max_hsps 1'.
+## The output file will contain summary statistics on the number of identical sequences, percent identity and whether sequences are
+## more or less than 10 % different in length.
+
 my $usage = "$0 <blast hits table> <outfile>";
 
 if (@ARGV != 2){die (print "\n$usage\n\n")};
@@ -104,4 +112,5 @@ print $outfile "\n\nLength-difference > 10 %, identity < 90 %:\n" .
 for my $i (sort keys %lessthan90morethan10){
     my @array = @{$lessthan90morethan10{$i}};
     print $outfile join ("\t", @array) . "\n";}
+    
 close $outfile;
