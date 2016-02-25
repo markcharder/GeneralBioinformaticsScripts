@@ -2,8 +2,7 @@
 
 This repository includes the following kinds of scripts:
 
-- Scripts used to reformat typical sequence data files such as fasta files and gff files.
-- Scripts used to analyse features of biological sequences.
+- Portable scripts used to reformat typical sequence data files such as fasta files and gff files.
+- Portable scripts used to analyse features of biological sequences.
+- Scripts specifically used for the Sclerotinia sclerotiorum genome project that are only portable if one had followed exactly the same procedures as our lab beforehand.
 
-Most of the reformatting scripts are semi-portable, i.e. they may require some pre-emptive formatting by the user.
-They should take care of the tricky bits that would be impractical to attempt to do manually.
