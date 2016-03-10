@@ -7,7 +7,7 @@
 ## If a hit has an unrelated taxid, an e-value above the user-defined threshold (deafault 1e-30), and a rank below the 
 ## user-defined threshold (default 5), it is printed to file.
 ## Given a list of taxids from closest to most distant (defined in this explanation as 1 - 10), the script will give hits not
-## in 1 but in 2, not in 1 or 2 but in 3, not in 1, 2 or 3 but in 4; and so on. The order of the list is imporant,
+## in 1 but in 2, not in 1 or 2 but in 3, not in 1, 2 or 3 but in 4; and so on. The order of the list is important,
 ## going from 1 - 10, it considers taxids to be related as such 1<2<3<4<5<6<7<8<9<10, where "<" indicates child to parent
 ## taxa going from left to right.
 
