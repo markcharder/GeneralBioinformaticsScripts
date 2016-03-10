@@ -1,7 +1,7 @@
 #!/usr/bin/env perl
 
 ## This script was used to parse results from a blast analysis against the entire NCBI nr AA database using
-## all S. sclerotiorum proteins.
+## all genomic proteins.
 ## It takes accessions of hits and downloads their taxids from NCBI. It then compares them to lists of taxids in files
 ## specified in a list of files given by the user.
 ## If a hit has an unrelated taxid, an e-value above the user-defined threshold (deafault 1e-30), and a rank below the 
