@@ -247,10 +247,6 @@ foreach my $taxon (@names_array){
 
 warn "Finished processing\n";
 
-for my $i (keys $taxon_array[0]) {
-    print "$i\n";
-}
-
 ## Define global variables for use in testing for potential hgt.
 $hash_count = 0;
 my $hash_length = keys %taxids;
