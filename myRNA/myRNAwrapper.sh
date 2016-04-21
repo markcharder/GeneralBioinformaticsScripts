@@ -14,6 +14,8 @@ annotations=$3
 genome_prefix=$(echo "$genome" | rev | cut -d "." -f2 | rev)
 reads_prefix=$(echo "$reads" | rev | cut -d "." -f2 | rev)
 
+mkdir $reads_prefix
+
 # Step 1
 #
 # Collapse fastq file containing small RNA reads and build bowtie index for
@@ -101,3 +103,6 @@ samtools view -bS ${reads_prefix}.mapped_to_hairpins.sam > ${reads_prefix}.mappe
 samtools sort ${reads_prefix}.mapped_to_hairpins.bam ${reads_prefix}.mapped_to_hairpins.sort
 bedtools genomecov -bg -ibam ${reads_prefix}.mapped_to_hairpins.sort.bam -g ${reads_prefix}.intergenic.fasta > ${reads_prefix}.bedgraph
 
+# Clean up
+mv ${reads_prefix}.fasta ${reads_prefix}.sam ${reads_prefix}.csv ${reads_prefix}.uniqueHPs.fasta ${reads_prefix}.uniqueHPs_mapped.sam ${reads_prefix}.intergenic.bed ${reads_prefix}.intergenic.fasta ${reads_prefix}.merged.bed ${reads_prefix}.bed ${reads_prefix}.valid.fasta ${reads_prefix}.mapped_to_hairpins.sam ${reads_prefix}.mapped_to_hairpins.bam ${reads_prefix}.mapped_to_hairpins.sort.bam ${reads_prefix}.bedgraph $reads_prefix
+rm *ebwt *fai *extracts folded.fa hairpins.fa ip.txt rna.ps removed.txt 
