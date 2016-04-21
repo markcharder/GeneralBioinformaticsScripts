@@ -15,6 +15,12 @@ use POSIX;
 use strict;
 use warnings;
 
+my $usage = "$0 <blast results file> <taxid list> <threshold e-value> <threshold rank>";
+
+if (@ARGV < 2){
+    die ("\n\n$usage\n\n")
+}
+
 warn "Script started " . localtime() . "\n";
 
 ## Define different inputs based on command line arguments.
@@ -53,11 +59,6 @@ if (!defined ($ARGV[3])){
 }
 
 my $bash_path = "./";
-my $usage = "$0 <blast results file> <taxid list> <threshold e-value> <threshold rank>";
-
-if (@ARGV < 2){
-    die ("\n\n$usage\n\n")
-}
 
 warn "Using threshold e-value of $threshold_evalue and threshold rank of $threshold_rank\n";
 

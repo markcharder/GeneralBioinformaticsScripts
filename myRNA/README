@@ -1,0 +1,31 @@
+myRNAwrapper.sh is a wrapper for the perl script, which does its own thing but is in turn a wrapper
+for scripts included in the software package hhmmir.
+splitFasta is not necessary for use with this program, but can be used for splitting a fasta sequence,
+if you should require to consider only one chromosome for example.
+
+The extractFlanks.pl script is the main script. This will take a sam file of mapped reads and find
+flanking regions in the genome of interest. These flanking regions are then passed to hhmmir modules to
+find likely hairpins within them. Hairpins are then mapped back to the reference genome to determine
+hairpin loci. Any that are intragenic are removed.
+Bowtie is used to map the original reads back to the hairpins once they have been identified so coverage
+plots can be produced and studied by eye.
+
+To use the wrapper script, you must specify the following:
+
+myRNAwrapper.sh <fasta> <fastq> <gff>
+
+Where <fasta> is the FULL PATH to the genome fasta, <fastq> is the FULL PATH to your small RNA sequencing data 
+(make sure it is trimmed and filtered - use trimmomatic and myRNA/utils/filterReads.sh on trimmed data) and 
+<gff> is the FULL PATH to your cds sequences.
+
+To use extractFlanks.pl alone, you must specify the following:
+
+perl extractFlanks.pl
+--fasta 	: the fasta input sequence that you wish to analyse. it must match the sam mapping file.
+--sam 		: a sam file that contains fastx_collapser collapsed read mappings from smallRNA seq data to the fasta file
+--direction 	: the direction of the flanking sequence, i.e. from the end of the smallRNA sequence, in which direction should a flank extend. this can be one of left/right/both.
+--flank		: the size of the flanking sequence(s) you wish to extract. I have found a size opf 60 work well
+--stack		: the number of identical read mappings that will trigger an extraction. I use a cutoff of 100 but you can go way lower if you want to identify microRNAs with low expression.
+--output	: this is the name of the output from hhmmir. This will be further parsed with the myRNAwrapper.sh script.
+
+By default myRNAwrapper.sh uses a flank size of 60, a read stack of 50 and a flank direction of both. You can modify the script to change these.
