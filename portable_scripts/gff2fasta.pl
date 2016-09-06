@@ -111,7 +111,7 @@ while (my $line = <$gff>){
         $mrnaname = $attrs[0];
         $frame = $array[6];}
 
-    elsif ($type eq "CDS"){
+    elsif ($type eq "exon"){
         my $cdscoord = $array[0] . " " . $array[3] . " " . $array[4];
         $cds{$array[3]} = $cdscoord;}}
 
