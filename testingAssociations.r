@@ -1,4 +1,5 @@
-readFiles <- function(){
+## First is for repeats.
+readFilesRepeast <- function(){
   effectorClosest<<-list()
   secretedClosest<<-list()
   noEffClosest<<-list()
@@ -26,7 +27,9 @@ readFiles <- function(){
     noEffClosest[[i]] <<- noEff
     }
   }
-readFiles <- function(){
+
+## Second is for RIPs.
+readFilesRIPs <- function(){
   effectorClosest<<-list()
   secretedClosest<<-list()
   noEffClosest<<-list()
@@ -56,29 +59,7 @@ readFiles <- function(){
   }
 require("ggplot2")
 
-barplotData <- function(number){
-  x<-barplot(
-    c(mean(unlist(secretedClosest[[number]])),
-    mean(unlist(noSecClosest[[number]])),
-    mean(unlist(effectorClosest[[number]])),
-    mean(unlist(noEffClosest[[number]]))),
-    beside=TRUE,
-    ylim=c(0,400))
-
-  arrows(
-    x[,number],
-    c(mean(unlist(secretedClosest[[number]]))-((sd(unlist(secretedClosest[[number]])))/2),
-    mean(unlist(noSecClosest[[number]]))-((sd(unlist(noSecClosest[[number]])))/2),
-    mean(unlist(effectorClosest[[number]]))-((sd(unlist(effectorClosest[[number]])))/2),
-    mean(unlist(noEffClosest[[number]]))-((sd(unlist(noEffClosest[[number]])))/2)),
-    x[,number],c(mean(unlist(secretedClosest[[number]]))+((sd(unlist(secretedClosest[[number]])))/2),
-    mean(unlist(noSecClosest[[number]]))+((sd(unlist(noSecClosest[[number]])))/2),
-    mean(unlist(effectorClosest[[number]]))+((sd(unlist(effectorClosest[[number]])))/2),
-    mean(unlist(noEffClosest[[number]]))+((sd(unlist(noEffClosest[[number]])))/2)),
-    code=3)
-  }
-
-
+##Plot data using ggplot2.
 plotData<-function(number){
   nosec<-data.frame(unlist(noSecClosest[[number]]),
     rep("Non-secreted",length(unlist(noSecClosest[[number]]))))
